@@ -1,7 +1,99 @@
 html {
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
     margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.quote-generator {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3a3a3a;
+}
+
+.quote-generator__content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    width: 80%;
+    padding: 26px;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    box-shadow: 0 0 12px rgb(0 0 0 / 30%);
+    transition: all .2s;
+}
+
+.quote-generator__content-box.loading {
+    opacity: .5;
+    pointer-events: none;
+}
+
+.quote-generator__error-message {
+    background-color: #ff3e3e;
+    color: #fff;
+    text-align: center;
+    padding: 6px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.quote-generator__text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.quote-generator__quote {
+    color: #0a0a0a;
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+}
+
+.quote-generator__quote::before {
+    position: relative;
+    display: inline-block;
+    content: '"';
+    font-size: 74px;
+    line-height: 0;
+    width: 42px;
+    height: 0;
+    top: 36px;
+}
+
+.quote-generator__author {
+    font-style: italic;
+}
+
+.quote-generator__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.quote-generator__btn {
+    color: #f6f6f6;
+    background-color: #0a0a0a;
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none !important;
+    border: 2px solid #0a0a0a;
+    transition: all .2s;
+}
+
+.quote-generator__btn:hover {
+    color: #0a0a0a;
+    background-color: #fff;
 }
