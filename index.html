@@ -5,12 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="icon" href="https://www.yannicconrad.de/favicon-32x32.png"" type="image/png">
+    <link rel="icon" href="https://www.yannicconrad.de/favicon-32x32.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <div class="joke-teller">
+        <div class="joke-teller__content">
+            <h1>Joke Teller</h1>
+            <div class="joke-teller__action-wrapper">
+                <div class="joke-teller__options-wrapper">
+                    <div class="joke-teller__options">
+                        <span class="joke-teller__options-heading">Select category:</span>
+                        <div class="joke-teller__radios">
+                            <input hidden type="radio" name="joke_type" id="Programming">
+                            <label for="Programming">Programmer<span></span></label>
+                            <input hidden type="radio" name="joke_type" id="Misc">
+                            <label for="Misc">Misc<span></span></label>
+                            <input hidden type="radio" name="joke_type" id="Pun">
+                            <label for="Pun">Pun<span></span></label>
+                        </div>
+                    </div>
+                    <div class="joke-teller__options">
+                        <span class="joke-teller__options-heading">Select format:</span>
+                        <div class="joke-teller__radios">
+                            <input hidden type="radio" name="joke_format" id="single">
+                            <label for="single">Simple<span></span></label>
+                            <input hidden type="radio" name="joke_format" id="twopart">
+                            <label for="twopart">Two Part<span></span></label>
+                        </div>
+                    </div>
+                    <div class="joke-teller__options">
+                        <span class="joke-teller__options-heading">Select language:</span>
+                        <div class="joke-teller__radios">
+                            <input hidden type="radio" name="joke_lang" id="de">
+                            <label for="de">German<span></span></label>
+                            <input hidden type="radio" name="joke_lang" id="en">
+                            <label for="en">English<span></span></label>
+                            <input hidden type="radio" name="joke_lang" id="fr">
+                            <label for="fr">French<span></span></label>
+                        </div>
+                    </div>
+                    <div class="joke-teller__options">
+                        <span class="joke-teller__options-heading">Select speed:</span>
+                        <div class="joke-teller__radios">
+                            <input hidden type="radio" name="joke_speed" id="20">
+                            <label for="20">Fast<span></span></label>
+                            <input hidden type="radio" name="joke_speed" id="70">
+                            <label for="70">Medium<span></span></label>
+                            <input hidden type="radio" name="joke_speed" id="120">
+                            <label for="120">Slow<span></span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="joke-teller__button-wrapper">
+                    <button class="joke-teller__joke-btn" disabled>Tell me a joke!</button>
+                    <button class="joke-teller__mute-btn">
+                        <i class="fa-solid fa-volume-xmark"></i>                    
+                    </button>
+                    <button class="joke-teller__pause-btn" disabled>
+                        <i class="fa-solid fa-pause"></i>
+                    </button>
+                </div>
+            </div>
+            <p class="joke-teller__error-msg"></p>
+            <p class="joke-teller__joke-wrapper"></p>
+        </div>
+    </div>
 </body>
 </html>

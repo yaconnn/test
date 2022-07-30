@@ -1,7 +1,212 @@
-html {
+* {
     box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html {
+    overflow: hidden;
 }
 
 body {
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 72px;
+    color: #f33a6e;
+    text-shadow: 1px 1px 0px rgb(255 255 255);
+}
+
+.joke-teller {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    background: rgb(0 118 147);
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.joke-teller__content {
+    background: rgb(20, 184, 224);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    max-width: 620px;
+    padding: 0 30px;    
+    box-shadow: 0 0 100px rgb(0 0 0 / 5%);
+}
+
+.joke-teller__action-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 34px;
+}
+
+.joke-teller__options-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* background: #3cabd5; */
+    border: 1px dashed #fff;
+    margin-bottom: 22px;
+    padding: 6px 14px;
+}
+
+.joke-teller__options {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    width: 50%;
+    padding: 14px 0;
+}
+
+.joke-teller__options:nth-child(2n + 1)::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -12px;
+    display: block;
+    content: "";
+    height: 88%;
+    width: 1px;
+    background-color: #ffffffa6;
+}
+
+.joke-teller__options-heading {    
+    background: #4ca5d1;
+    background-color: #3693c1;
+    background-color: rgb(255, 53, 114);
+    box-shadow: 1px 1px 0 rgb(255 255 255);
+    padding: 7px 8px;
+    transform: skewX(-10deg);
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.joke-teller__radios {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.joke-teller__radios label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.joke-teller__radios label:not(:last-of-type) {
+    margin-right: 14px;
+}
+
+.joke-teller__radios label span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #35a5cf;
+    border: 1px solid #1e84ab;
+    border-radius: 2px;
+    margin-left: 6px;
+    transition: all .2s;
+}
+
+input[type="radio"]:checked + label span {
+    background-color: rgb(255, 53, 114);
+    border-color: rgb(163, 10, 56);;
+}
+
+.joke-teller__button-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.joke-teller__pause-btn, 
+.joke-teller__mute-btn  {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    border: 1px solid;
+    border-radius: 50%;
+    transition: all .2s;
+}
+
+.joke-teller__mute-btn {
+    right: 60px;
+    font-size: 22px;
+}
+
+.joke-teller__joke-btn {
+    background-color: rgb(255, 53, 114);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 18px;
+    box-shadow: 0 4px 0 rgb(197, 16, 71);
+    cursor: pointer;
+    transition: all .2s;
+}
+
+button:disabled {
+    pointer-events: none;
+    opacity: .5;
+}
+
+.joke-teller__joke-btn:active {
+    background-color: rgb(230, 48, 102);
+    box-shadow: 0 2px 0 rgb(197, 16, 71);
+    transform: translateY(2px);
+}
+
+.joke-teller__joke-wrapper {
+    font-size: 16px;
+    transform: skewX(-10deg);
+    text-align: center;
+    line-height: 58px;
+}
+
+.joke-teller__joke-single, .joke-teller__joke-setup, .joke-teller__joke-delivery {
+    padding: 10px 12px;
+    background-color: #fff;
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.joke-teller__joke-setup {
+    margin-bottom: 14px;
+}
+
+.joke-teller__joke-delivery {
+    background-color: rgb(243 58 110);
+    color: #fff;
+    font-weight: 800;
+    margin-left: 14px;
+}
+
+.joke-teller__error-msg {
+    color: #fff;
     margin: 0;
 }
